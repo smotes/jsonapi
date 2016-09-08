@@ -3,7 +3,6 @@ package jsonapi_test
 import (
 	"errors"
 	"fmt"
-	"time"
 
 	"github.com/smotes/jsonapi"
 )
@@ -17,19 +16,16 @@ type Person struct {
 
 // Article represents an article in an example blog engine, used in examples and integration tests.
 type Article struct {
-	ID      int
-	Title   string
-	Body    string
-	Created time.Time
-	Updated time.Time
-	Author  *Person
+	ID     int
+	Title  string
+	Body   string
+	Author *Person
 }
 
 // various singleton fixtures used in unit/integration tests, and examples.
 
 // common
 var (
-	now     = time.Now()
 	testErr = errors.New("test error")
 )
 
@@ -125,22 +121,18 @@ var (
 		ID: 42,
 	}
 	testArticle = Article{
-		ID:      1,
-		Title:   "JSON API paints my bikeshed!",
-		Body:    "The shortest article. Ever.",
-		Created: now,
-		Updated: now,
-		Author:  &testPerson,
+		ID:     1,
+		Title:  "JSON API paints my bikeshed!",
+		Body:   "The shortest article. Ever.",
+		Author: &testPerson,
 	}
-	testArticleJSON = fmt.Sprintf(`
+	testArticleJSON = `
 	{
 		"id": "1",
 		"type": "articles",
 		"attributes": {
 			"title": "JSON API paints my bikeshed!",
-			"body": "The shortest article. Ever.",
-			"created": "%s",
-			"updated": "%s"
+			"body": "The shortest article. Ever."
 		},
 		"relationships": {
 			"author": {
@@ -162,5 +154,5 @@ var (
 			"type": "foo"
 		}
 	}
-	`, now.Format(time.RFC3339Nano), now.Format(time.RFC3339Nano))
+	`
 )

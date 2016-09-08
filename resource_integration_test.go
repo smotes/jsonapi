@@ -66,7 +66,7 @@ func TestResource_UnmarshalJSON(t *testing.T) {
 	expected.Author = nil
 	actual.Author = nil
 	if !reflect.DeepEqual(expected, actual) {
-		t.Errorf("article from unmarshaling resource does not match expected value:\n- expected:\t%+v\n- actual\t%+v",
+		t.Errorf("article from unmarshaling resource does not match expected value:\n- expected:\t%+v\n- actual:\t%+v",
 			expected, actual)
 	}
 }

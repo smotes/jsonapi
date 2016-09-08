@@ -5,7 +5,6 @@ import (
 	"errors"
 	"fmt"
 	"strconv"
-	"time"
 
 	"github.com/smotes/jsonapi"
 )
@@ -60,41 +59,19 @@ func (a *Article) SetAttributes(as map[string]interface{}) error {
 		}
 	}
 
-	if v, ok := as["created"]; ok {
-		if v, ok := v.(string); ok {
-			temp, err := time.Parse(time.RFC3339Nano, v)
-			if err != nil {
-				return err
-			}
-			a.Created = temp
-		}
-	}
-
-	if v, ok := as["updated"]; ok {
-		if v, ok := v.(string); ok {
-			temp, err := time.Parse(time.RFC3339Nano, v)
-			if err != nil {
-				return err
-			}
-			a.Updated = temp
-		}
-	}
-
 	return nil
 }
 
 // This example includes an integration test with jsonapi.FromResource function and
 // the json.Unmarshal function from the "encoding/json" package.
 func ExampleFromResource() {
-	testArticleJSON = fmt.Sprintf(`
+	testArticleJSON = `
 	{
 		"id": "1",
 		"type": "articles",
 		"attributes": {
 			"title": "JSON API paints my bikeshed!",
-			"body": "The shortest article. Ever.",
-			"created": "%s",
-			"updated": "%s"
+			"body": "The shortest article. Ever."
 		},
 		"relationships": {
 			"author": {
@@ -116,7 +93,7 @@ func ExampleFromResource() {
 			"type": "foo"
 		}
 	}
-	`, now.Format(time.RFC3339Nano), now.Format(time.RFC3339Nano))
+	`
 
 	p := Person{}
 	article := Article{}

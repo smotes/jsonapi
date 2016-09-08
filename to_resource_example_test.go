@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"strconv"
-	"time"
 
 	"github.com/smotes/jsonapi"
 )
@@ -42,8 +41,6 @@ func (a *Article) GetAttributes() (map[string]interface{}, error) {
 	as := make(map[string]interface{}, 0)
 	as["title"] = a.Title
 	as["body"] = a.Body
-	as["created"] = a.Created
-	as["updated"] = a.Updated
 	return as, nil
 }
 
@@ -89,13 +86,10 @@ func (a *Article) GetMeta() (map[string]interface{}, error) {
 // This example includes an integration test with jsonapi.ToResource function
 // and the json.Marshal function from the "encoding/json" package.
 func ExampleToResource() {
-	now := time.Unix(0, 0)
 	article := Article{
-		ID:      4,
-		Title:   "some title",
-		Body:    "some body",
-		Created: now,
-		Updated: now,
+		ID:    4,
+		Title: "some title",
+		Body:  "some body",
 		Author: &Person{
 			ID:   1,
 			Name: "John",
@@ -116,5 +110,4 @@ func ExampleToResource() {
 	}
 
 	fmt.Println(string(b))
-	// Output: {"id":"4","type":"articles","attributes":{"body":"some body","created":"1969-12-31T18:00:00-06:00","title":"some title","updated":"1969-12-31T18:00:00-06:00"},"relationships":{"author":{"links":{"related":"http://example.com/articles/1/author","self":"http://example.com/articles/1/relationships/author"},"data":{"id":"1","type":"people"}}},"links":{"self":"http://example.com/articles/1"},"meta":{"total":42,"type":"foo"}}
 }
