@@ -2,6 +2,8 @@
 
 [![GoDoc](https://godoc.org/github.com/smotes/jsonapi?status.svg)](https://godoc.org/github.com/smotes/jsonapi)
 
+[![Build Status](https://travis-ci.org/smotes/jsonapi.svg?branch=master)](https://travis-ci.org/smotes/jsonapi)
+
 Package jsonapi converts Go data to and from the [JSON API](http://jsonapi.org) format.
 
 ```
