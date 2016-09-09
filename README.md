@@ -1,10 +1,6 @@
 # jsonapi
 
-[![GoDoc](https://godoc.org/github.com/smotes/jsonapi?status.svg)](https://godoc.org/github.com/smotes/jsonapi)
-
-[![Build Status](https://travis-ci.org/smotes/jsonapi.svg?branch=master)](https://travis-ci.org/smotes/jsonapi)
-
-[![codecov](https://codecov.io/gh/smotes/jsonapi/branch/master/graph/badge.svg)](https://codecov.io/gh/smotes/jsonapi)
+[![GoDoc](https://godoc.org/github.com/smotes/jsonapi?status.svg)](https://godoc.org/github.com/smotes/jsonapi) [![Build Status](https://travis-ci.org/smotes/jsonapi.svg?branch=master)](https://travis-ci.org/smotes/jsonapi) [![codecov](https://codecov.io/gh/smotes/jsonapi/branch/master/graph/badge.svg)](https://codecov.io/gh/smotes/jsonapi)
 
 
 Package jsonapi converts Go data to and from the [JSON API](http://jsonapi.org) format.
@@ -17,10 +13,10 @@ go get -u github.com/smotes/jsonapi
 
 The JSON API specification has strict requirements on the structure of any JSON request/response containing data, a 
 structure most likely varying drastically from any backend data structures. This package solely aims to provide 
-utilities around converting said backend data to the specification's structure in a type-safe manner, while also
-assuming nothing about the JSON encoding/decoding package used.
+utilities around converting said backend data to the specification's while avoiding reflection and assuming nothing 
+about the JSON encoding/decoding package used.
 
-### Type safe
+### Avoid reflection
 
 Implement multiple (mostly optional) interfaces to convert your data to and from JSON API documents and resources.
 
