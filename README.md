@@ -4,6 +4,9 @@
 
 [![Build Status](https://travis-ci.org/smotes/jsonapi.svg?branch=master)](https://travis-ci.org/smotes/jsonapi)
 
+[![codecov](https://codecov.io/gh/smotes/jsonapi/branch/master/graph/badge.svg)](https://codecov.io/gh/smotes/jsonapi)
+
+
 Package jsonapi converts Go data to and from the [JSON API](http://jsonapi.org) format.
 
 ```
