@@ -66,5 +66,5 @@ Tested, detailed examples are included on the ToResource and FromResource functi
 
 * Fork the repository.
 * Code your changes.
-* If applicable, write tests and documentation for the new functionality (please ensure all tests pass and have 100% coverage).
+* If applicable, write tests and documentation for the new functionality (please ensure all tests pass, have 100% coverage and pass go vet and golint).
 * Raise a new pull request with a short description.
