@@ -2,3 +2,4 @@
 *.iml
 
 coverage.out
+coverage.txt
