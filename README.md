@@ -54,7 +54,7 @@ fmt.Println(string(b))
 // {"id": "1", "type": "people"}
 ```
 
-## Tested examples
+### Tested examples
 
 Tested, detailed examples are included on the ToResource and FromResource functions in the [godocs](https://godoc.org/github.com/smotes/jsonapi).
 
