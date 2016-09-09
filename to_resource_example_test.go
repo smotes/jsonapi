@@ -110,4 +110,5 @@ func ExampleToResource() {
 	}
 
 	fmt.Println(string(b))
+	// Output: {"id":"4","type":"articles","attributes":{"body":"some body","title":"some title"},"relationships":{"author":{"links":{"related":"http://example.com/articles/1/author","self":"http://example.com/articles/1/relationships/author"},"data":{"id":"1","type":"people"}}},"links":{"self":"http://example.com/articles/1"},"meta":{"total":42,"type":"foo"}}
 }
